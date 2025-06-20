@@ -145,7 +145,7 @@ public class TaskController {
      * but right now it just returns all the tasks.
      *
      * Query Parameters:
-     *   - userId: If provided, should filter and return only tasks belonging to the specified user.
+     *   - userId: Filter and return only tasks belonging to the specified user.
      *
      * Response:
      *   - 200 OK: Returns a list of tasks.
