@@ -145,10 +145,10 @@ public class TaskController {
      * but right now it just returns all the tasks.
      *
      * Query Parameters:
-     *   - userId (optional): If provided, should filter and return only tasks belonging to the specified user.
+     *   - userId: If provided, should filter and return only tasks belonging to the specified user.
      *
      * Response:
-     *   - 200 OK: Returns a list of tasks (optionally filtered by userId).
+     *   - 200 OK: Returns a list of tasks.
      */
     @GetMapping("/api/tasks")
     public ResponseEntity<?> getTasks() {
