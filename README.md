@@ -3,6 +3,18 @@ We have a bug in our app.
 
 The `api/tasks?userId=1` is returning all tasks for all users rather than just the user with id 1 - this is a security issue.
 
+Here is an example of what should be returned for `userId=1`:
+```
+[
+  {
+  	"id": 101,
+  	"userId": 1,
+  	"title": "Buy groceries",
+  	"status": "TODO"
+  }
+]
+```
+
 # Important to know
 The following was discovered as part of building this project:
 

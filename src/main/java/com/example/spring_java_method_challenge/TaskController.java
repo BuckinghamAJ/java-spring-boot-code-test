@@ -40,20 +40,22 @@ public class TaskController {
     );
 
     /**
-     * GET /greeting
-     * Returns a greeting message.
-     *
-     * Query Parameters:
-     *   - name (optional): The name to include in the greeting. Defaults to "World" if not provided.
+     * GET /health
+     * Healthcheck endpoint for the controller.
      *
      * Response:
-     *   - 200 OK: Returns a plain text greeting message, e.g., "Hello, Bob!"
+     *   - 200 OK: Returns a JSON object indicating the service is healthy.
      */
-    @GetMapping("/greeting")
-    public String greeting(
-        @RequestParam(value = "name", defaultValue = "World") String name
-    ) {
-        return String.format(template, name);
+    @GetMapping("/health")
+    public ResponseEntity<?> healthcheck() {
+        return ResponseEntity.ok()
+            .body(
+                new java.util.HashMap<String, String>() {
+                    {
+                        put("status", "ok");
+                    }
+                }
+            );
     }
 
     /**

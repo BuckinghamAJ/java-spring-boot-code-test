@@ -26,19 +26,11 @@ class SpringJavaMethodChallengeApplicationTests {
     private TaskController taskController;
 
     @Test
-    void greetingDefaultMessage() throws Exception {
+    void healthEndpointReturnsOkStatus() throws Exception {
         mockMvc
-            .perform(get("/greeting"))
+            .perform(get("/health"))
             .andExpect(status().isOk())
-            .andExpect(content().string("Hello, World!"));
-    }
-
-    @Test
-    void greetingWithName() throws Exception {
-        mockMvc
-            .perform(get("/greeting").param("name", "Adam"))
-            .andExpect(status().isOk())
-            .andExpect(content().string("Hello, Adam!"));
+            .andExpect(jsonPath("$.status").value("ok"));
     }
 
     @Test
