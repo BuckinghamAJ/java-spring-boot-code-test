@@ -1,8 +1,5 @@
 package com.example.spring_java_method_challenge;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

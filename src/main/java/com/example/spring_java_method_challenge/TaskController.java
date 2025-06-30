@@ -3,8 +3,6 @@ package com.example.spring_java_method_challenge;
 import com.example.spring_java_method_challenge.Models.Task;
 import com.example.spring_java_method_challenge.Models.TaskStatus;
 import com.example.spring_java_method_challenge.Models.User;
-import jakarta.validation.Valid;
-import jakarta.validation.ValidationException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -110,7 +108,7 @@ public class TaskController {
      *   - 400 Bad Request: If required fields are missing or user with the same ID already exists.
      */
     @PostMapping("/api/users")
-    public ResponseEntity<?> addUser(@Valid @RequestBody User user) {
+    public ResponseEntity<?> addUser(@RequestBody User user) {
         if (user.id() == 0) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(
                 new ErrorResponse(
